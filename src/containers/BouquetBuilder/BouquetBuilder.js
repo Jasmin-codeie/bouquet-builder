@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from "./BouquetBuilder.module.css"
-import BouquetKit from "../../components/BouquetBuilder/BouquetKit/BouquetKit";
+import Bouquet from "../../components/BouquetBuilder/Bouquet/Bouquet";
 
 export default () => (
     <div className={classes.BouquetBuilder}>
-        <BouquetKit />
+        <Bouquet />
         BouquetControls
     </div>
 );
