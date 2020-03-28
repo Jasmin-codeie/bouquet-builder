@@ -1,5 +1,9 @@
 import React from 'react';
+import classes from "./Toolbar.module.css";
 
 export default () => (
-    <div className="Toolbar">Toolbar </div>
-)
+    <div className={classes.Toolbar}>
+        Toolbar
+        </div>
+);
+//let className = [classes.Toolbar, classes.Red.join(' ')];
