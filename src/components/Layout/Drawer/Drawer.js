@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default () => (
-    <div className="SideDrawer">SideDrawer </div>
+    <div className="Drawer">Drawer </div>
 )

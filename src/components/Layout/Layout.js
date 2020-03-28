@@ -1,10 +1,11 @@
 import React from 'react';
 import Toolbar from "./Toolbar/Toolbar";
-import SideDrawer from "./SideDrawer/SideDrawer";
+import Drawer from "./Drawer/Drawer";
 
-export default () => (
+export default ({children}) => (
     <div className="Layout"> 
     <Toolbar />
-    <SideDrawer />
+    <Drawer />
+    {children}
     </div>
 );

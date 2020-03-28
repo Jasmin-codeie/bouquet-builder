@@ -4,7 +4,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      Bouquet Builder by Shabieva Jasmin, Catch
+      <Layout>
+        Bouquet Builder
+      </Layout>
     </div>
   );
 }
