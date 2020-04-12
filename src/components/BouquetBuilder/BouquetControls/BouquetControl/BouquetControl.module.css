@@ -1,0 +1,26 @@
+.BouquetControl {
+    display: flex;
+    align-items: center;
+  }
+  .BouquetControl .label {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+    padding: .5rem;
+  }
+  .BouquetControl button {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: white;
+    color: #EC6F31;
+    font-weight: bold;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  .BouquetControl button:disabled {
+    opacity: .5;
+  }
+  .BouquetControl button:not(:disabled):hover {
+    opacity: .8;
+  }
