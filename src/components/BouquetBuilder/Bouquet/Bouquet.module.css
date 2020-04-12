@@ -1,0 +1,18 @@
+.Bouquet .bento {
+  padding: 1rem;
+  padding-top: 2rem;
+
+  background-color: lightgray;
+  width: 392px;
+  height: 300px;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+
+  overflow: hidden;
+}
+.Bouquet .price {
+  font-size: 2rem;
+  font-weight: bold;
+}

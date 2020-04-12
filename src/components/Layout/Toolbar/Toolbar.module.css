@@ -1,3 +1,7 @@
 .Toolbar {
-    background-color: crimson;
-}
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+  
+    background-color: rgb(255, 255, 255);
+  }

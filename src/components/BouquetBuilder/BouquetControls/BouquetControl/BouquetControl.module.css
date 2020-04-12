@@ -3,7 +3,7 @@
     align-items: center;
   }
   .BouquetControl .label {
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.5rem;
     padding: .5rem;
@@ -13,7 +13,7 @@
     height: 20px;
     border: none;
     background-color: white;
-    color: #EC6F31;
+    color: rgb(205, 49, 236);
     font-weight: bold;
     border-radius: 100%;
     cursor: pointer;
