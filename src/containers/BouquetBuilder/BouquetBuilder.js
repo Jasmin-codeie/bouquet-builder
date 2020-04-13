@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Bouquet from "../../components/BouquetBuilder/Bouquet/Bouquet";
 import classes from "./BouquetBuilder.module.css";
-import SushiControls from "../../components/BouquetBuilder/BouquetControls/BouquetControls";
+import BouquetControls from "../../components/BouquetBuilder/BouquetControls/BouquetControls";
 
 const PRICES = {
     roses: 7,
@@ -32,7 +32,7 @@ export default () => {
     setPrice(newPrice);
   }
 
-  function removeFlower(type) {
+  function removeFlowers(type) {
     if (flowers[type] >= 1) {
       const newFlowers = { ...flowers };
       newFlowers[type]--;

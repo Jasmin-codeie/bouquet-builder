@@ -1,5 +1,5 @@
 import React from "react";
-import Sushi from "./Flower/Flower";
+import Flower from "./Flower/Flower";
 import classes from "./Bouquet.module.css";
 
 export default ({ price, flowers }) => {

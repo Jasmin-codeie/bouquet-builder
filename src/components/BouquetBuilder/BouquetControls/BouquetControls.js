@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./BouquetControls.module.css";
-import SushiControl from "./BouquetControl/BouquetControl";
+import BouquetControl from "./BouquetControl/BouquetControl";
 
 const CONTROLS = [
   { label: "Roses", type: "roses" },
