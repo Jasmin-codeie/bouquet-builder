@@ -8,7 +8,7 @@ const CONTROLS = [
   { label: "Daisies", type: "daisies" },
   { label: "Lilies", type: "lilies" },
   { label: "Irises", type: "irises" },
-  { label: "Chrysanthemums", type: "chrysanthemums" },
+  { label: "Lilies Of The Valley", type: "liliesOfTheValley" },
 ];
 
 export default ({flowers, addFlowers, removeFlowers }) => {

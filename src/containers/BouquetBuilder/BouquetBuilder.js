@@ -9,7 +9,7 @@ const PRICES = {
     daisies: 8,
     lilies: 11,
     irises: 15,
-    chrysanthemums: 12,
+    liliesOfTheValley: 12,
 };
 
 export default () => {
@@ -19,9 +19,10 @@ export default () => {
     daisies: 0,
     lilies: 0,
     irises: 0,
-    chrysanthemums: 0,
+    liliesOfTheValley: 0,
   });
   const [price, setPrice] = useState(80);
+  const [canOrder, setCanOrder] = useState(false);
 
   function addFlowers(type) {
     const newFlowers = { ...flowers };
