@@ -4,7 +4,7 @@ import BouquetControl from "./BouquetControl/BouquetControl";
 
 const CONTROLS = [
   { label: "Roses", type: "roses" },
-  { label: "Tulips", type: "tulips" },
+  { label: "Jasmine", type: "jasmine" },
   { label: "Daisies", type: "daisies" },
   { label: "Lilies", type: "lilies" },
   { label: "Irises", type: "irises" },

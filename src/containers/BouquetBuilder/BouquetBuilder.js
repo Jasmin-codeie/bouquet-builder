@@ -5,7 +5,7 @@ import BouquetControls from "../../components/BouquetBuilder/BouquetControls/Bou
 
 const PRICES = {
     roses: 7,
-    tulips: 10,
+    jasmine: 10,
     daisies: 8,
     lilies: 11,
     irises: 15,
@@ -15,7 +15,7 @@ const PRICES = {
 export default () => {
   const [flowers, setFlowers] = useState({
     roses: 0,
-    tulips: 0,
+    jasmine: 0,
     daisies: 0,
     lilies: 0,
     irises: 0,
