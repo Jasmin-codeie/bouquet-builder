@@ -1,32 +1,36 @@
 .Flower {
-  width: 40px;
-  height: 50px;
   box-sizing: border-box;
-  margin-top: -20px;
-  
+  width: 50px;
+  height: 50px;
   background-repeat: no-repeat;
 }
 
 .roses {
  background-image: url(../../../../assets/rose.png);
+ background-size: cover;
 }
 
 .jasmine {
 background-image: url(../../../../assets/jasmine.png);
+background-size: cover;
 }
 
 .daisies {
   background-image: url(../../../../assets/dairy.png);
+  background-size: cover;
 }
 
 .lilies {
   background-image: url(../../../../assets/lily.png);
+  background-size: cover;
 }
 
 .irises {
   background-image: url(../../../../assets/irise.png);
+  background-size: cover;
 }
 
 .liliesOfTheValley {
   background-image: url(../../../../assets/tiny.png);
+  background-size: cover;
 }
