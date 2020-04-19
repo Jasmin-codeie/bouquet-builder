@@ -1,5 +1,5 @@
 .Drawer .content {
-  width: 300px;
+  width: 330px;
   background-color: white;
   position: fixed;
   top: 0;
@@ -14,10 +14,10 @@
 transform: translateX(0);
 }
 .Closed {
-transform: translateX(-300px);
+transform: translateX(-330px);
 }
 
-@media (min-width: 500px) {
+@media (min-width: 6500px) {
   .Drawer {
     display: none;
   }

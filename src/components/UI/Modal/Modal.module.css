@@ -3,9 +3,11 @@
   padding: 1rem;
   position: absolute;
   z-index: 500;
+  font-size: .9rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   top: 100px;
   background-color: white;
-  border: 1px solid black;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.137);
 
   transition: all 0.5s ease-out;
   opacity: 0;

@@ -1,9 +1,11 @@
 .Button {
-  width: 90px;
+  width: 100px;
   height: 30px;
+  font-size: 1rem;
   border: none;
-  color: rgb(205, 49, 236);
+  margin-right: 5px;
   background-color: white;
+  color: #577E4E;
   font-weight: bold;
   cursor: pointer;
   text-transform: uppercase;

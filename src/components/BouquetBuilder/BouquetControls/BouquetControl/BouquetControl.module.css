@@ -1,22 +1,22 @@
 .BouquetControl {
   display: flex;
   align-items: center;
+  margin-top: 8px;
 }
 
 .BouquetControl .label {
   color: rgb(0, 0, 0);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1.5rem;
-  padding: .5rem;
+  font-size: 1rem;
+  padding: .8rem;
 }
 
 .BouquetControl button {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border: none;
-  background-color: white;
-  color: rgb(205, 49, 236);
-  font-weight: bold;
+  background-color: #333333a8;
+  color: white;
   border-radius: 100%;
   cursor: pointer;
 }
