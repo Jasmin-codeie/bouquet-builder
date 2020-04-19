@@ -4,10 +4,18 @@ import Logo from "../../UI/Logo/Logo";
 import Navigation from "../../UI/Navigation/Navigation";
 import Backdrop from "../../UI/Backdrop/Backdrop";
 
-export default () => (<div className={classes.Drawer}>
-    <Backdrop show />
-    <section> <Logo />
-    <Navigation /></section>
-   
-</div>
-);
+export default ({ toggleDrawer, open }) => {
+  const contentClasses = [classes.content];
+  contentClasses.push[open ? classes.Open : classes.Close];
+
+  return (
+    <div className={classes.Drawer}>
+      <Backdrop hideCallBack={toggleDrawer} show={open} />
+      <div className={contentClasses.join(" ")}>
+        {" "}
+        <Logo />
+        <Navigation />
+      </div>
+    </div>
+  );
+};

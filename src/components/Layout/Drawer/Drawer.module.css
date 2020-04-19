@@ -1,4 +1,4 @@
-.Drawer section {
+.Drawer .content {
   width: 300px;
   background-color: white;
   position: fixed;
@@ -8,6 +8,13 @@
   height: 100%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.137);
   background-color: #f2f2f2;
+}
+
+.Open {
+transform: translateX(0);
+}
+.Close {
+transform: translateX(-260px);
 }
 
 @media (min-width: 500px) {
