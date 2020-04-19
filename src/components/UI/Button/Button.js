@@ -6,7 +6,7 @@ export default ({ children, click, enabled }) => {
     <button
       onClick={click}
       className={classes.Button}
-      disabled={enabled === undefined ? true : !enabled}
+      disabled={enabled === undefined ? false : !enabled}
     >
       {children}
     </button>

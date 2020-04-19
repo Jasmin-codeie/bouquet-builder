@@ -1,7 +1,17 @@
 .Toolbar {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid grey;
-  
-    background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+
+  background-color: rgb(255, 255, 255);
+}
+
+.Toolbar nav {
+  display: none;
+}
+
+@media (min-width: 500px) {
+  .Toolbar nav {
+    display: block;
   }
+}
