@@ -1,0 +1,18 @@
+.Button {
+  width: 90px;
+  height: 30px;
+  border: none;
+  color: rgb(205, 49, 236);
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.Button:disabled {
+  opacity: 0.5;
+}
+
+.Button:not(:disabled):hover {
+  opacity: 0.8;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./BouquetControls.module.css";
 import BouquetControl from "./BouquetControl/BouquetControl";
+import Button from "../../UI/Button/Button";
 
 const CONTROLS = [
   { label: "Roses", type: "roses" },
@@ -31,13 +32,9 @@ export default ({
   return (
     <div className={classes.BouquetControls}>
       {controlsOutput}
-      <button
-        onClick={startOrder}
-        disabled={!canOrder}
-        className={classes.orderButton}
-      >
+      <Button click={startOrder} enabled={canOrder}>
         Order
-      </button>
+      </Button>
     </div>
   );
 };

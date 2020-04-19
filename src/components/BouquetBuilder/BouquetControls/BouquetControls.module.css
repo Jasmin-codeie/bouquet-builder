@@ -10,21 +10,3 @@
   align-items: center;
 }
 
-.BouquetControls .orderButton {
-  width: 70px;
-  height: 30px;
-  border: none;
-  color: rgb(205, 49, 236);
-  background-color: white;
-  font-weight: bold;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-.BouquetControls .orderButton:disabled {
-  opacity: 0.5;
-}
-
-.BouquetControls .orderButton:not(:disabled):hover {
-  opacity: 0.8;
-}
