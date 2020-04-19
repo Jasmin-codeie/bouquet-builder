@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Bouquet from "../../components/BouquetBuilder/Bouquet/Bouquet";
 import classes from "./BouquetBuilder.module.css";
 import BouquetControls from "../../components/BouquetBuilder/BouquetControls/BouquetControls";
+import Modal from '../../components/UI/Modal/Modal';
+
 
 const PRICES = {
   roses: 7,
@@ -64,6 +66,7 @@ export default () => {
         addFlowers={addFlowers}
         removeFlowers={removeFlowers}
       />
+      <Modal> Hello World</Modal>
     </div>
   );
 };
