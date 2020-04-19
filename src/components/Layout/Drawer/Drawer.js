@@ -6,7 +6,7 @@ import Backdrop from "../../UI/Backdrop/Backdrop";
 
 export default ({ toggleDrawer, open }) => {
   const contentClasses = [classes.content];
-  contentClasses.push[open ? classes.Open : classes.Close];
+  contentClasses.push(open ? classes.Open : classes.Closed);
 
   return (
     <div className={classes.Drawer}>

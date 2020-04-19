@@ -13,8 +13,8 @@
 .Open {
 transform: translateX(0);
 }
-.Close {
-transform: translateX(-260px);
+.Closed {
+transform: translateX(-300px);
 }
 
 @media (min-width: 500px) {
