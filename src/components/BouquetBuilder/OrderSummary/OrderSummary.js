@@ -11,7 +11,7 @@ const LABELS = {
   liliesOfTheValley: "Lilies Of The Valley",
 };
 
-export default ({ flowers }) => {
+export default ({ flowers, cancelOrder, finishOrder }) => {
   const flowersOutput = Object.keys(flowers)
     .filter((flower) => flowers[flower] > 0)
     .map((flower) => (
@@ -26,8 +26,8 @@ export default ({ flowers }) => {
       <p>Here are your composition of the bouquet!</p>
       <ul>{flowersOutput}</ul>
       <p>Would you like to checkout? </p>
-      <Button>Checkout</Button>
-      <Button>Cancel</Button>
+      <Button click={finishOrder}>Checkout</Button>
+      <Button click={cancelOrder}>Cancel</Button>
     </div>
   );
 };

@@ -38,8 +38,12 @@ export default () => {
     setIsOrdering(true);
   }
 
-  function cancelOrder(){
+  function cancelOrder() {
     setIsOrdering(false);
+  }
+
+  function finishOrder() {
+    alert("Are you sure?");
   }
 
   function addFlowers(type) {
@@ -75,7 +79,11 @@ export default () => {
         removeFlowers={removeFlowers}
       />
       <Modal show={isOrdering} hideCallBack={cancelOrder}>
-        <OrderSummary flowers={flowers} />
+        <OrderSummary
+          cancelOrder={cancelOrder}
+          finishOrder={finishOrder}
+          flowers={flowers}
+        />
       </Modal>
     </div>
   );
