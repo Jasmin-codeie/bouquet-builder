@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Bouquet from "../../components/BouquetBuilder/Bouquet/Bouquet";
 import classes from "./BouquetBuilder.module.css";
 import BouquetControls from "../../components/BouquetBuilder/BouquetControls/BouquetControls";
-import Modal from '../../components/UI/Modal/Modal';
-
+import Modal from "../../components/UI/Modal/Modal";
+import OrderSummary from "../../components/BouquetBuilder/OrderSummary/OrderSummary";
 
 const PRICES = {
   roses: 7,
@@ -25,12 +25,17 @@ export default () => {
   });
   const [price, setPrice] = useState(80);
   const [canOrder, setCanOrder] = useState(false);
+  const [isOrdering, setIsOrdering] = useState(false);
 
   function checkCanOrder(flowers) {
-    const total = Object.keys(flowers).reduce((total, flower)=> {
+    const total = Object.keys(flowers).reduce((total, flower) => {
       return total + flowers[flower];
     }, 0);
     setCanOrder(total > 0);
+  }
+
+  function startOrder() {
+    setIsOrdering(true);
   }
 
   function addFlowers(type) {
@@ -41,7 +46,6 @@ export default () => {
 
     const newPrice = price + PRICES[type];
     setPrice(newPrice);
-   
   }
 
   function removeFlowers(type) {
@@ -53,7 +57,6 @@ export default () => {
 
       const newPrice = price - PRICES[type];
       setPrice(newPrice);
-      
     }
   }
 
@@ -61,12 +64,15 @@ export default () => {
     <div className={classes.BouquetBuilder}>
       <Bouquet price={price} flowers={flowers} />
       <BouquetControls
+        startOrder={startOrder}
         canOrder={canOrder}
         flowers={flowers}
         addFlowers={addFlowers}
         removeFlowers={removeFlowers}
       />
-      <Modal> Hello World</Modal>
+      <Modal show={isOrdering}>
+        <OrderSummary flowers={flowers} />
+      </Modal>
     </div>
   );
 };
