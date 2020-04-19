@@ -1,3 +1,7 @@
+.Bouquet {
+  padding: 0 .5rem;
+}
+
 .Bouquet .bento {
   padding: 1rem;
   padding-top: 2rem;
@@ -16,4 +20,7 @@
 .Bouquet .price {
   font-size: 2rem;
   font-weight: bold;
+  text-align: center;
+  color: blueviolet;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

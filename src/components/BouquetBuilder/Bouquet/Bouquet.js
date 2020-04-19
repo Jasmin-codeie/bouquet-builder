@@ -15,7 +15,7 @@ export default ({ price, flowers }) => {
   return (
     <div className={classes.Bouquet}>
       <div className={classes.bento}>{flowersOutput}</div>
-      <div className={classes.price}>Total price: {price} som</div>
+      <div className={classes.price}> {price} som</div>
     </div>
   );
 };

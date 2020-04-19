@@ -83,6 +83,7 @@ export default () => {
           cancelOrder={cancelOrder}
           finishOrder={finishOrder}
           flowers={flowers}
+          price={price}
         />
       </Modal>
     </div>
