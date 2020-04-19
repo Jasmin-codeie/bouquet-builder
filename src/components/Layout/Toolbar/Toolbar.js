@@ -1,13 +1,15 @@
-import React from 'react';
+import React from "react";
 import classes from "./Toolbar.module.css";
 import Logo from "../Logo/Logo";
-import Nav from "./Nav/Nav";
+import Navigation from "./Navigation/Navigation";
 
 export default () => (
-    <div className={classes.Toolbar}>
-        <Logo />
-        <Nav />
-    </div>
+  <div className={classes.Toolbar}>
+    <Logo />
+    <nav>
+      <Navigation />
+    </nav>
+  </div>
 );
 
 //let className = [classes.Toolbar, classes.Red.join(' ')];
