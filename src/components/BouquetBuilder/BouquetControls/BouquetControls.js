@@ -11,7 +11,7 @@ const CONTROLS = [
   { label: "Lilies Of The Valley", type: "liliesOfTheValley" },
 ];
 
-export default ({ flowers, addFlowers, removeFlowers }) => {
+export default ({ canOrder, flowers, addFlowers, removeFlowers }) => {
   const controlsOutput = CONTROLS.map((control) => (
     <BouquetControl
       key={control.type}
@@ -25,7 +25,9 @@ export default ({ flowers, addFlowers, removeFlowers }) => {
   return (
     <div className={classes.BouquetControls}>
       {controlsOutput}
-      <button>Order </button>
+      <button disabled={!canOrder} className={classes.orderButton}>
+        Order
+      </button>
     </div>
   );
 };

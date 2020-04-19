@@ -4,12 +4,12 @@ import classes from "./BouquetBuilder.module.css";
 import BouquetControls from "../../components/BouquetBuilder/BouquetControls/BouquetControls";
 
 const PRICES = {
-    roses: 7,
-    jasmine: 10,
-    daisies: 8,
-    lilies: 11,
-    irises: 15,
-    liliesOfTheValley: 12,
+  roses: 7,
+  jasmine: 10,
+  daisies: 8,
+  lilies: 11,
+  irises: 15,
+  liliesOfTheValley: 12,
 };
 
 export default () => {
@@ -24,13 +24,22 @@ export default () => {
   const [price, setPrice] = useState(80);
   const [canOrder, setCanOrder] = useState(false);
 
+  function checkCanOrder(flowers) {
+    const total = Object.keys(flowers).reduce((total, flower)=> {
+      return total + flowers[flower];
+    }, 0);
+    setCanOrder(total > 0);
+  }
+
   function addFlowers(type) {
     const newFlowers = { ...flowers };
     newFlowers[type]++;
     setFlowers(newFlowers);
+    checkCanOrder(newFlowers);
 
     const newPrice = price + PRICES[type];
     setPrice(newPrice);
+   
   }
 
   function removeFlowers(type) {
@@ -38,9 +47,11 @@ export default () => {
       const newFlowers = { ...flowers };
       newFlowers[type]--;
       setFlowers(newFlowers);
+      checkCanOrder(newFlowers);
 
       const newPrice = price - PRICES[type];
       setPrice(newPrice);
+      
     }
   }
 
@@ -48,6 +59,7 @@ export default () => {
     <div className={classes.BouquetBuilder}>
       <Bouquet price={price} flowers={flowers} />
       <BouquetControls
+        canOrder={canOrder}
         flowers={flowers}
         addFlowers={addFlowers}
         removeFlowers={removeFlowers}

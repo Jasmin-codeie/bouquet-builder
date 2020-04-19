@@ -1,21 +1,30 @@
 .BouquetControls {
-    border: 3px solid rgb(63, 57, 62);
-    background-color: rgba(195, 116, 202, 0.438);
-    width: 300px;
-    padding-top: .5rem;
-    padding-left: .5rem;
-  
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-  }
+  border: 3px solid rgb(63, 57, 62);
+  background-color: rgba(195, 116, 202, 0.438);
+  width: 300px;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
 
-  .BouquetControls button {
-    width: 70px;
-    height: 30px;
-    border: none;
-    background-color: white;
-    color: rgb(205, 49, 236);
-    font-weight: bold;
-    cursor: pointer;
-  }
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.BouquetControls .orderButton {
+  width: 70px;
+  height: 30px;
+  border: none;
+  color: rgb(205, 49, 236);
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.BouquetControls .orderButton:disabled {
+  opacity: 0.5;
+}
+
+.BouquetControls .orderButton:not(:disabled):hover {
+  opacity: 0.8;
+}
