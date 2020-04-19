@@ -38,6 +38,10 @@ export default () => {
     setIsOrdering(true);
   }
 
+  function cancelOrder(){
+    setIsOrdering(false);
+  }
+
   function addFlowers(type) {
     const newFlowers = { ...flowers };
     newFlowers[type]++;
@@ -70,7 +74,7 @@ export default () => {
         addFlowers={addFlowers}
         removeFlowers={removeFlowers}
       />
-      <Modal show={isOrdering}>
+      <Modal show={isOrdering} hideCallBack={cancelOrder}>
         <OrderSummary flowers={flowers} />
       </Modal>
     </div>
