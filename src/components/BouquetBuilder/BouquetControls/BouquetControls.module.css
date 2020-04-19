@@ -9,3 +9,13 @@
     flex-flow: column nowrap;
     align-items: center;
   }
+
+  .BouquetControls button {
+    width: 70px;
+    height: 30px;
+    border: none;
+    background-color: white;
+    color: rgb(205, 49, 236);
+    font-weight: bold;
+    cursor: pointer;
+  }

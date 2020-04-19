@@ -1,26 +1,30 @@
 .BouquetControl {
-    display: flex;
-    align-items: center;
-  }
-  .BouquetControl .label {
-    color: rgb(0, 0, 0);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.5rem;
-    padding: .5rem;
-  }
-  .BouquetControl button {
-    width: 20px;
-    height: 20px;
-    border: none;
-    background-color: white;
-    color: rgb(205, 49, 236);
-    font-weight: bold;
-    border-radius: 100%;
-    cursor: pointer;
-  }
-  .BouquetControl button:disabled {
-    opacity: .5;
-  }
-  .BouquetControl button:not(:disabled):hover {
-    opacity: .8;
-  }
+  display: flex;
+  align-items: center;
+}
+
+.BouquetControl .label {
+  color: rgb(0, 0, 0);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  padding: .5rem;
+}
+
+.BouquetControl button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: white;
+  color: rgb(205, 49, 236);
+  font-weight: bold;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.BouquetControl button:disabled {
+  opacity: .5;
+}
+  
+.BouquetControl button:not(:disabled):hover {
+  opacity: .8;
+}
