@@ -21,9 +21,10 @@ export default ({ flowers }) => {
 
   return (
     <div className={classes.OrderSummary}>
-      <h2>Your order</h2>
-      <p>Congratulations!</p>
+      <h2>Congratulations! </h2>
+      <p>Here are your composition of the bouquet!</p>
       <ul>{flowersOutput}</ul>
+      <p>Would you like to checkout? </p>
     </div>
   );
 };
