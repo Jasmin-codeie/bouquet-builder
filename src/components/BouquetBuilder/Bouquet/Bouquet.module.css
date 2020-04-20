@@ -3,20 +3,22 @@
 }
 
 .Bouquet .bento {
-  padding: 1rem;
-  padding-top: 2rem;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-flow: wrap;
+  align-items: center;
 
   background-image: url(../../../assets/unnamed.jpg);
   background-size: cover;
   width: 500px;
-  height: 300px;
-
-  display: flex;
-  flex-flow: row wrap;
-  align-content: flex-start;
-
-  overflow: hidden;
+  height: 300px; 
+  margin: 0 auto;
+  padding-bottom: 30px;
+ 
 }
+
 .Bouquet .price {
   font-size: 4rem;
   font-weight: bold;
@@ -25,16 +27,17 @@
   font-family: 'Tangerine', cursive;
 }
 
-.Bouquet .Flowers {
+
+.Bouquet .flowerBento { 
   position: relative;
-  width: 160px;
-  height: 120px;
+  padding: 10px;
+  width: 210px;
+  height: 210px;
   border: 1px solid transparent;
   border-radius: 100%;
-  margin-left: 160px;
-  margin-top: 50px;
   background-color: transparent;
 }
+
 
 @media (max-width: 650px){
   .Bouquet .bento {
