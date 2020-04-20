@@ -28,3 +28,10 @@
 .BouquetControl button:not(:disabled):hover {
   opacity: .8;
 }
+
+@media (max-width: 650px) {
+  .BouquetControl .label{
+    font-size: 0.9rem;
+  }
+  
+}

@@ -22,3 +22,12 @@
     list-style: none;
     padding: 2px;
 }
+
+@media (max-width: 650px){
+    .Footer ul{
+        font-size: 0.8rem;
+    }
+    .Footer{
+        margin-top: 80px;
+    }
+}

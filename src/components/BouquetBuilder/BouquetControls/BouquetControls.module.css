@@ -9,3 +9,8 @@
   align-items: center;
 }
 
+@media (max-width: 650px) {
+  .BouquetControls{
+    margin-top: 20px;
+  }
+}

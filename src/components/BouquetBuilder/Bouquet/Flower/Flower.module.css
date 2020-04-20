@@ -32,3 +32,10 @@ background-size: cover;
   background-image: url(../../../../assets/tiny.png);
   background-size: cover;
 }
+
+@media (max-width:600px){
+  .flowers{
+    width: 25px;
+    height: 25px;
+  }
+}

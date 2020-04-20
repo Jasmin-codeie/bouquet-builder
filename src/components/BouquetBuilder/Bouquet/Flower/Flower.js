@@ -46,8 +46,8 @@ export default ({ type }) => {
       position: "absolute",
       top: position.y + "px",
       left: position.x + "px",
-      width: 35 + "px",
-      height: 35 + "px"
+      width: 30 + "px",
+      height: 30 + "px"
     };
   
     return <div style={stylePos} className={flowersClasses.join(" ")}></div>;
