@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {memo} from 'react';
 import classes from "./Flower.module.css";
 
-export default ({ type }) => {
+
+export default memo(({ type }) => {
     const flowersClasses = [classes.flowers, classes[type]];
 
     let stylePos = null;
@@ -51,4 +52,4 @@ export default ({ type }) => {
     };
   
     return <div style={stylePos} className={flowersClasses.join(" ")}></div>;
-  };
+  });
