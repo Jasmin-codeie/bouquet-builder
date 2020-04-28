@@ -48,7 +48,6 @@ export default ({ type }) => {
     left: position.x + "px",
     width: 30 + "px",
     height: 30 + "px",
-    transform: "rotate(" + 120 + "deg)",
   };
 
   return <div style={stylePos} className={flowersClasses.join(" ")}></div>;

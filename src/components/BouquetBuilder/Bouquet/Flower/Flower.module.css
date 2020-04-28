@@ -4,13 +4,13 @@
 }
 
 .roses {
- background-image: url(../../../../assets/rose.png);
- background-size: cover;
+  background-image: url(../../../../assets/rose.png);
+  background-size: cover;
 }
 
 .jasmine {
-background-image: url(../../../../assets/jasmine.png);
-background-size: cover;
+  background-image: url(../../../../assets/jasmine.png);
+  background-size: cover;
 }
 
 .daisies {
@@ -33,9 +33,9 @@ background-size: cover;
   background-size: cover;
 }
 
-@media (max-width:600px){
-  .flowers{
-    width: 25px;
-    height: 25px;
+@media (max-width: 600px) {
+  .Flower {
+    width: 20px;
+    height: 20px;
   }
 }
