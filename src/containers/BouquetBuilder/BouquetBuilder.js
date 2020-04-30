@@ -4,6 +4,7 @@ import classes from "./BouquetBuilder.module.css";
 import BouquetControls from "../../components/BouquetBuilder/BouquetControls/BouquetControls";
 import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/BouquetBuilder/OrderSummary/OrderSummary";
+import axios from "../../axios";
 
 const PRICES = {
   roses: 7,
@@ -43,7 +44,21 @@ export default () => {
   }
 
   function finishOrder() {
-    alert("Are you sure?");
+    const order = {
+      flowers: flowers,
+      price: price,
+      delivery: "Fast",
+      customer: {
+        name: "Jasmin",
+        phone: "070707070",
+        address: {
+          street: "123 Abd",
+          city: "Karakol",
+        },
+      },
+    };
+
+    axios.post("/orders.json", order).then((response) => console.log(response));
   }
 
   function addFlowers(type) {
