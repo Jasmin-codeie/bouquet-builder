@@ -1,5 +1,5 @@
 .BouquetControls {
-  background-color: white;
+  background-color: #f7d9cc;
   width: 300px;
   padding-top: 0.5rem;
   padding-left: 0.5rem;
@@ -10,7 +10,7 @@
 }
 
 @media (max-width: 650px) {
-  .BouquetControls{
+  .BouquetControls {
     margin-top: 20px;
   }
 }
