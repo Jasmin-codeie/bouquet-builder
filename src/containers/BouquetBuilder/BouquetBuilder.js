@@ -6,6 +6,7 @@ import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/BouquetBuilder/OrderSummary/OrderSummary";
 import axios from "../../axios";
 import Spinner from "../../components/UI/Spinner/Spinner";
+import withErrorHandler from "../../hoc/withErrorHadler/withErrorHadler";
 
 const PRICES = {
   roses: 7,
@@ -16,7 +17,7 @@ const PRICES = {
   liliesOfTheValley: 12,
 };
 
-export default () => {
+export default withErrorHandler(() => {
   const [flowers, setFlowers] = useState({
     roses: 0,
     jasmine: 0,
@@ -61,7 +62,7 @@ export default () => {
     };
 
     setLoading(true);
-    axios.post("/orders.json", order).then((response) => {
+    axios.post("/orders", order).then((response) => {
       setLoading(false);
       setIsOrdering(false);
     });
@@ -116,4 +117,4 @@ export default () => {
       </Modal>
     </div>
   );
-};
+}, axios);
