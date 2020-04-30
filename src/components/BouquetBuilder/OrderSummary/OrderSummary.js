@@ -11,11 +11,11 @@ const LABELS = {
   liliesOfTheValley: "Lilies Of The Valley",
 };
 
-export default ({ flowers, cancelOrder, finishOrder,price }) => {
+export default ({ flowers, cancelOrder, finishOrder, price }) => {
   const flowersOutput = Object.keys(flowers)
     .filter((flower) => flowers[flower] > 0)
     .map((flower) => (
-      <li>
+      <li key={flowers}>
         {LABELS[flower]}: {flowers[flower]}{" "}
       </li>
     ));
@@ -25,7 +25,7 @@ export default ({ flowers, cancelOrder, finishOrder,price }) => {
       <h2>Congratulations! </h2>
       <p>Here is the composition of your bouquet:</p>
       <ul>{flowersOutput}</ul>
-  <p>Total price: {price} som.</p>
+      <p>Total price: {price} som.</p>
       <p>Would you like to checkout? </p>
       <Button click={finishOrder}>Checkout</Button>
       <Button click={cancelOrder}>Cancel</Button>

@@ -4,7 +4,7 @@ import classes from "./Logo.module.css";
 
 export default () => (
   <div className={classes.Logo}>
-    <img src={logo} />
+    <img src={logo} alt="Bouquet Builder logo" />
     <span>Bouquet Builder</span>
   </div>
 );
