@@ -1,10 +1,12 @@
-import React from 'react';
-import classes from './Navigation.module.css';
-import NavigationItem from './NavigationItem/NavigationItem';
+import React from "react";
+import classes from "./Navigation.module.css";
+import NavigationItem from "./NavigationItem/NavigationItem";
 
 export default () => (
-    <ul className={classes.Navigation}>
-      <NavigationItem  url="/" active>Bouquet Builder</NavigationItem> 
-      <NavigationItem url="/checkout">Checkout</NavigationItem> 
-    </ul>
+  <ul className={classes.Navigation}>
+    <NavigationItem url="/" active>
+      Bouquet Builder
+    </NavigationItem>
+    <NavigationItem url="/checkout">Checkout</NavigationItem>
+  </ul>
 );

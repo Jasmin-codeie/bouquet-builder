@@ -8,8 +8,10 @@ export default ({ children, show, hideCallBack }) => {
     modalClasses.push(classes.show);
   }
 
-  return <>
-  <Backdrop show={show} hideCallBack={hideCallBack} />
-  <div className={modalClasses.join(" ")}>{children}</div>
-  </>
+  return (
+    <>
+      <Backdrop show={show} hideCallBack={hideCallBack} />
+      <div className={modalClasses.join(" ")}>{children}</div>
+    </>
+  );
 };

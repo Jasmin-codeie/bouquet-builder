@@ -11,7 +11,7 @@
   font-size: 0.8rem;
   border-bottom: 5px solid transparent;
 
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .NavigationItem a:hover {

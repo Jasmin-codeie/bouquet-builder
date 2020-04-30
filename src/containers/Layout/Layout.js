@@ -1,15 +1,15 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Toolbar from "../../components/Layout/Toolbar/Toolbar";
 import Drawer from "../../components/Layout/Drawer/Drawer";
 import classes from "./Layout.module.css";
 import Footer from "../../components/UI/Footer/Footer";
 
 export default ({ children }) => {
-    const [drawerOpen, setDrawerOpen]= useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
-    function toggleDrawer(){
-      setDrawerOpen(!drawerOpen);
-    }
+  function toggleDrawer() {
+    setDrawerOpen(!drawerOpen);
+  }
 
   return (
     <div className={classes.Layout}>

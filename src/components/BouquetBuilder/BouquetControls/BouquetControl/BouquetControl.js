@@ -11,10 +11,7 @@ export default ({ control, removeFlowers, addFlowers, disabled }) => (
       -
     </button>
     <span className={classes.label}>{control.label}</span>
-    <button
-      className={classes.more}
-      onClick={() => addFlowers(control.type)}
-    >
+    <button className={classes.more} onClick={() => addFlowers(control.type)}>
       +
     </button>
   </div>
