@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Bouquet from "../../components/BouquetBuilder/Bouquet/Bouquet";
 import classes from "./BouquetBuilder.module.css";
 import BouquetControls from "../../components/BouquetBuilder/BouquetControls/BouquetControls";
@@ -18,14 +18,7 @@ const PRICES = {
 };
 
 export default withErrorHandler(() => {
-  const [flowers, setFlowers] = useState({
-    roses: 0,
-    jasmine: 0,
-    daisies: 0,
-    lilies: 0,
-    irises: 0,
-    liliesOfTheValley: 0,
-  });
+  const [flowers, setFlowers] = useState(null);
   const [price, setPrice] = useState(80);
   const [canOrder, setCanOrder] = useState(false);
   const [isOrdering, setIsOrdering] = useState(false);
@@ -90,6 +83,25 @@ export default withErrorHandler(() => {
     }
   }
 
+  useEffect(() => {
+    axios.get("/flowers.json").then((response) => setFlowers(response.data));
+  }, []);
+
+  let output = <Spinner />;
+  if (flowers) {
+    output = (
+      <>
+        <Bouquet price={price} flowers={flowers} />
+        <BouquetControls
+          startOrder={startOrder}
+          canOrder={canOrder}
+          flowers={flowers}
+          addFlowers={addFlowers}
+          removeFlowers={removeFlowers}
+        />
+      </>
+    );
+  }
   let orderSummary = <Spinner />;
   if (isOrdering && !loading) {
     orderSummary = (
@@ -104,14 +116,7 @@ export default withErrorHandler(() => {
 
   return (
     <div className={classes.BouquetBuilder}>
-      <Bouquet price={price} flowers={flowers} />
-      <BouquetControls
-        startOrder={startOrder}
-        canOrder={canOrder}
-        flowers={flowers}
-        addFlowers={addFlowers}
-        removeFlowers={removeFlowers}
-      />
+      {output}
       <Modal show={isOrdering} hideCallBack={cancelOrder}>
         {orderSummary}
       </Modal>
