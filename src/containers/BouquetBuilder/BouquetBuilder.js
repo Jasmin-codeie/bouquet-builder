@@ -27,6 +27,7 @@ export default () => {
   const [price, setPrice] = useState(80);
   const [canOrder, setCanOrder] = useState(false);
   const [isOrdering, setIsOrdering] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   function checkCanOrder(flowers) {
     const total = Object.keys(flowers).reduce((total, flower) => {
@@ -58,7 +59,11 @@ export default () => {
       },
     };
 
-    axios.post("/orders.json", order).then((response) => console.log(response));
+    setLoading(true);
+    axios.post("/orders.json", order).then((response) => {
+      setLoading(false);
+      setIsOrdering(false);
+    });
   }
 
   function addFlowers(type) {
@@ -83,6 +88,18 @@ export default () => {
     }
   }
 
+  let orderSummary = "Loading...";
+  if (!loading) {
+    orderSummary = (
+      <OrderSummary
+        cancelOrder={cancelOrder}
+        finishOrder={finishOrder}
+        flowers={flowers}
+        price={price}
+      />
+    );
+  }
+
   return (
     <div className={classes.BouquetBuilder}>
       <Bouquet price={price} flowers={flowers} />
@@ -93,14 +110,7 @@ export default () => {
         addFlowers={addFlowers}
         removeFlowers={removeFlowers}
       />
-      <Modal show={isOrdering} hideCallBack={cancelOrder}>
-        <OrderSummary
-          cancelOrder={cancelOrder}
-          finishOrder={finishOrder}
-          flowers={flowers}
-          price={price}
-        />
-      </Modal>
+      <Modal show={isOrdering} hideCallBack={cancelOrder}></Modal>
     </div>
   );
 };
