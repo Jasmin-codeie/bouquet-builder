@@ -5,6 +5,7 @@ import BouquetControls from "../../components/BouquetBuilder/BouquetControls/Bou
 import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/BouquetBuilder/OrderSummary/OrderSummary";
 import axios from "../../axios";
+import Spinner from "../../components/UI/Spinner/Spinner";
 
 const PRICES = {
   roses: 7,
@@ -88,7 +89,7 @@ export default () => {
     }
   }
 
-  let orderSummary = "Loading...";
+  let orderSummary = <Spinner />;
   if (!loading) {
     orderSummary = (
       <OrderSummary
@@ -110,7 +111,9 @@ export default () => {
         addFlowers={addFlowers}
         removeFlowers={removeFlowers}
       />
-      <Modal show={isOrdering} hideCallBack={cancelOrder}></Modal>
+      <Modal show={isOrdering} hideCallBack={cancelOrder}>
+        {orderSummary}
+      </Modal>
     </div>
   );
 };
