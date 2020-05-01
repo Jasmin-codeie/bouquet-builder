@@ -84,7 +84,10 @@ export default withErrorHandler(() => {
   }
 
   useEffect(() => {
-    axios.get("/flowers.json").then((response) => setFlowers(response.data));
+    axios
+      .get("/flowers.json")
+      .then((response) => setFlowers(response.data))
+      .catch((error) => {});
   }, []);
 
   let output = <Spinner />;
