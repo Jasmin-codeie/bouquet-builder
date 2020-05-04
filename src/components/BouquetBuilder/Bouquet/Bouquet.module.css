@@ -29,9 +29,9 @@
   position: relative;
   padding: 10px;
   width: 190px;
-  height: 190px;
+  height: 130px;
   border: 1px solid transparent;
-  border-radius: 100%;
+  border-radius: 70%;
   background-color: transparent;
 }
 
