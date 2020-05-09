@@ -27,20 +27,39 @@
 
 .Bouquet .flowerBento {
   position: relative;
-  padding: 10px;
   width: 190px;
-  height: 130px;
+  height: 190px;
   border: 1px solid transparent;
   border-radius: 70%;
   background-color: transparent;
+  margin-bottom: 40px;
 }
 
 @media (max-width: 650px) {
   .Bouquet .bento {
     background-size: contain;
     background-repeat: no-repeat;
-    width: 380px;
-    height: 200px;
-    margin-left: 10px;
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-flow: wrap;
+    align-items: center;
+
+    background-image: url(../../../assets/3b34a078-ec6a-4266-b5b0-851917c4a309.jpg);
+    background-size: cover;
+    width: 300px;
+    height: 350px;
+    margin: 0 auto;
+  }
+  .Bouquet .flowerBento {
+    position: relative;
+    width: 190px;
+    height: 190px;
+    border: 1px solid transparent;
+    border-radius: 70%;
+    background-color: transparent;
+    margin-bottom: 40px;
   }
 }
