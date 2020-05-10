@@ -47,7 +47,7 @@ export default memo(({ type }) => {
     top: position.y + "px",
     left: position.x + "px",
     width: 40 + "px",
-    height: 40 + "px",
+    height: 38 + "px",
   };
 
   return <div style={stylePos} className={flowersClasses.join(" ")}></div>;
