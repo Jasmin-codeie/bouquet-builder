@@ -55,11 +55,11 @@
   }
   .Bouquet .flowerBento {
     position: relative;
-    width: 190px;
-    height: 190px;
+    width: 200px;
+    height: 200px;
     border: 1px solid transparent;
     border-radius: 70%;
     background-color: transparent;
-    margin-bottom: 45px;
+    margin-bottom: 55px;
   }
 }
