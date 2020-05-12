@@ -9,7 +9,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-transform: uppercase;
   font-size: 0.8rem;
-  border-bottom: 5px solid transparent;
+  border-bottom: 4px solid transparent;
 
   transition: all 0.2s ease-in;
 }
@@ -27,7 +27,7 @@
     border-right: 5px solid transparent;
   }
   .NavigationItem a:hover {
-    border-bottom: none;
+    border-bottom: 0px solid transparent;
     border-right-color: black;
     background-color: white;
   }
