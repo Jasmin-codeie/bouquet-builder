@@ -27,10 +27,10 @@ export default ({ flowers, cancelOrder, finishOrder, price }) => {
       <ul>{flowersOutput}</ul>
       <p>Total price: {price} som.</p>
       <p>Would you like to checkout? </p>
-      <Button green click={finishOrder}>
+      <Button click={finishOrder} green>
         Checkout
       </Button>
-      <Button red click={cancelOrder}>
+      <Button click={cancelOrder} red>
         Cancel
       </Button>
     </div>
