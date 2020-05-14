@@ -1,19 +1,22 @@
 import React from "react";
 import classes from "./Checkout.module.css";
 import CheckoutSummary from "../../components/Checkout/CheckoutSummary/CheckoutSummary";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 export default () => {
   const history = useHistory();
-  const flowers = {
-    roses: 1,
-    jasmine: 1,
-    daisies: 1,
-    lilies: 1,
-    irises: 1,
-    liliesOfTheValley: 1,
-  };
-  const price = 123;
+  const location = useLocation();
+
+  const query = new URLSearchParams(location.search);
+  let price = 0;
+  let flowers = {};
+  query.forEach((value, key) => {
+    if (key === "price") {
+      price = +value;
+    } else {
+      flowers[key] = +value;
+    }
+  });
 
   function checkoutCancel() {
     history.push("/builder");
