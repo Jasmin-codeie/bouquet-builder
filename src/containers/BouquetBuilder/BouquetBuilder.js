@@ -7,6 +7,7 @@ import OrderSummary from "../../components/BouquetBuilder/OrderSummary/OrderSumm
 import axios from "../../axios";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from "../../hoc/withErrorHadler/withErrorHadler";
+import { useHistory } from "react-router-dom";
 
 const PRICES = {
   roses: 7,
@@ -23,6 +24,7 @@ export default withErrorHandler(() => {
   const [canOrder, setCanOrder] = useState(false);
   const [isOrdering, setIsOrdering] = useState(false);
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   function checkCanOrder(flowers) {
     const total = Object.keys(flowers).reduce((total, flower) => {
@@ -40,24 +42,15 @@ export default withErrorHandler(() => {
   }
 
   function finishOrder() {
-    const order = {
-      flowers: flowers,
-      price: price,
-      delivery: "Fast",
-      customer: {
-        name: "Jasmin",
-        phone: "070707070",
-        address: {
-          street: "123 Abd",
-          city: "Karakol",
-        },
-      },
-    };
+    const queryParams = Object.keys(flowers).map(
+      (flower) =>
+        encodeURIComponent(flower) + "=" + encodeURIComponent(flowers[flower])
+    );
+    queryParams.push("price=" + encodeURIComponent(price));
 
-    setLoading(true);
-    axios.post("/orders.json", order).then((response) => {
-      setLoading(false);
-      setIsOrdering(false);
+    history.push({
+      pathname: "/checkout",
+      search: queryParams.join("&"),
     });
   }
 
