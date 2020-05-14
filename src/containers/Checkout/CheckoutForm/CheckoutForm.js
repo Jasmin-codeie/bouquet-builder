@@ -6,6 +6,7 @@ export default ({ checkoutFinish }) => {
   const [data, setData] = useState({
     name: "",
     phone: "",
+    city: "",
     address: "",
     delivery: "",
   });
@@ -20,6 +21,9 @@ export default ({ checkoutFinish }) => {
 
   function addressChange({ target }) {
     setData({ ...data, address: target.value });
+  }
+  function cityChange({ target }) {
+    setData({ ...data, city: target.value });
   }
 
   function deliveryChange({ target }) {
@@ -40,6 +44,13 @@ export default ({ checkoutFinish }) => {
         placeholder="Phone"
         onChange={phoneChange}
         value={data.phone}
+        required
+      />
+      <input
+        type="text"
+        placeholder="City"
+        onChange={cityChange}
+        value={data.city}
         required
       />
       <input
