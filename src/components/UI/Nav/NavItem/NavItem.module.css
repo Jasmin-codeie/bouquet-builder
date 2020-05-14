@@ -1,4 +1,4 @@
-.NavigationItem a {
+.NavItem a {
   display: flex;
   padding: 1rem;
   height: 70px;
@@ -14,19 +14,19 @@
   transition: all 0.2s ease-in;
 }
 
-.NavigationItem a:hover {
+.NavItem a:hover {
   border-bottom-color: black;
   background-color: white;
 }
-.NavigationItem .active {
-  background-color: #f8e2d94d;
+.NavItem .active {
+  background-color: #f8e2d97c;
 }
 
 @media (max-width: 650px) {
-  .NavigationItem a {
+  .NavItem a {
     border-right: 5px solid transparent;
   }
-  .NavigationItem a:hover {
+  .NavItem a:hover {
     border-bottom: 0px solid transparent;
     border-right-color: black;
     background-color: white;

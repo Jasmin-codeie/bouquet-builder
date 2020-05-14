@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Drawer.module.css";
 import Logo from "../../UI/Logo/Logo";
-import Navigation from "../../UI/Navigation/Navigation";
+import Nav from "../../UI/Nav/Nav";
 import Backdrop from "../../UI/Backdrop/Backdrop";
 
 export default ({ toggleDrawer, open }) => {
@@ -13,7 +13,7 @@ export default ({ toggleDrawer, open }) => {
       <Backdrop hideCallBack={toggleDrawer} show={open} />
       <div className={contentClasses.join(" ")}>
         <Logo />
-        <Navigation />
+        <Nav />
       </div>
     </div>
   );
