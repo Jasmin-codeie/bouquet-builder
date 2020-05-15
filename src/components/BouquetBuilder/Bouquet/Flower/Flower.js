@@ -40,14 +40,17 @@ export default memo(({ type }) => {
       break;
   }
 
-  const position = getPosition(45 / 2);
+  const position = getPosition(40 / 2);
 
   stylePos = {
+    width: 40 + "px",
+    height: 38 + "px",
+
     position: "absolute",
     top: position.y + "px",
     left: position.x + "px",
-    width: 40 + "px",
-    height: 38 + "px",
+
+    transform: "rotate(" + Math.random() * 60 + "deg" + ")",
   };
 
   return <div style={stylePos} className={flowersClasses.join(" ")}></div>;

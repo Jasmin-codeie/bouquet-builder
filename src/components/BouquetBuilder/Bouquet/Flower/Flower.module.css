@@ -1,6 +1,5 @@
 .Flower {
   box-sizing: border-box;
-
   background-repeat: no-repeat;
 }
 
@@ -32,6 +31,4 @@
 .liliesOfTheValley {
   background-image: url(../../../../assets/imgonline-com-ua-Transparent-backgr-l9j3NOXdz4.png);
   background-size: cover;
-  width: 40px;
-  height: 40px;
 }
