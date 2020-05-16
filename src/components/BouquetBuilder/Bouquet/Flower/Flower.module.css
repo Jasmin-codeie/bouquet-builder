@@ -6,29 +6,41 @@
 .roses {
   background-image: url(../../../../assets/rose.png);
   background-size: cover;
+  width: 40px;
+  height: 38px;
 }
 
 .jasmine {
   background-image: url(../../../../assets/jasmine.png);
   background-size: cover;
+  width: 40px;
+  height: 38px;
 }
 
 .daisies {
   background-image: url(../../../../assets/dairy.png);
   background-size: cover;
+  width: 40px;
+  height: 38px;
 }
 
 .lilies {
   background-image: url(../../../../assets/lily.png);
   background-size: cover;
+  width: 40px;
+  height: 38px;
 }
 
 .irises {
   background-image: url(../../../../assets/irise.png);
   background-size: cover;
+  width: 40px;
+  height: 38px;
 }
 
 .liliesOfTheValley {
   background-image: url(../../../../assets/imgonline-com-ua-Transparent-backgr-l9j3NOXdz4.png);
   background-size: cover;
+  width: 40px;
+  height: 38px;
 }
