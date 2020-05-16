@@ -5,17 +5,21 @@ export default memo(({ type }) => {
   const flowersClasses = [classes.flowers, classes[type]];
 
   let stylePos = null;
-  const getPosition = (ir) => {
-    const pd = 190;
-    const pr = pd / 2;
+  let rotation = 10;
+  let rx = 190;
+  let ry = 100;
+  let cx = 80;
+  let cy = 60;
 
-    const ix = Math.round(Math.random() * pd);
-    const iy = Math.round(Math.random() * pd);
+  const getPosition = (px, py) => {
+    let cos = Math.cos(rotation),
+      sin = Math.sin(rotation);
+    let dx = px - cx,
+      dy = py - cy;
+    let tdx = Math.floor(Math.random() * cos * dx + sin * dy),
+      tdy = Math.floor(Math.random() * sin * dx - cos * dy);
 
-    const distance =
-      Math.sqrt(Math.pow(ix - pr, 2) + Math.pow(iy - pr, 2)) + ir;
-
-    return distance < pr ? { x: ix - ir, y: iy - ir } : getPosition(ir);
+    return (tdx * tdx) / (rx * rx) + (tdy * tdy) / (ry * ry) <= 1;
   };
 
   switch (type) {
@@ -40,17 +44,15 @@ export default memo(({ type }) => {
       break;
   }
 
-  const position = getPosition(40 / 2);
+  const position = getPosition(50 / 2);
 
   stylePos = {
-    width: 40 + "px",
-    height: 38 + "px",
-
     position: "absolute",
     top: position.y + "px",
     left: position.x + "px",
-
-    transform: "rotate(" + Math.random() * 60 + "deg" + ")",
+    width: 40 + "px",
+    height: 38 + "px",
+    transform: "rotate(" + Math.random() * 45 + "deg" + ")",
   };
 
   return <div style={stylePos} className={flowersClasses.join(" ")}></div>;
