@@ -28,12 +28,14 @@
 .Bouquet .flowerBento {
   position: relative;
   width: 220px;
-  height: 150px;
+  height: 140px;
   border: 1px solid transparent;
-  border-radius: 30%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 30%;
   overflow: hidden;
   background-color: transparent;
-  margin-bottom: 55px;
+  margin-bottom: 56px;
+  margin-left: 50px;
 }
 
 @media (max-width: 650px) {
@@ -53,14 +55,5 @@
     width: 300px;
     height: 350px;
     margin: 0 auto;
-  }
-  .Bouquet .flowerBento {
-    position: relative;
-    width: 190px;
-    height: 100px;
-    border: 1px solid transparent;
-    border-radius: 70%;
-    background-color: transparent;
-    margin-bottom: 60px;
   }
 }

@@ -6,8 +6,8 @@ export default memo(({ type }) => {
 
   let stylePos = null;
   let ellipse = {
-    width: 210, // a, b - semi-axis of an ellipse
-    height: 170,
+    width: 220, // a, b - semi-axis of an ellipse
+    height: 140,
   };
 
   const getPosition = () => {
@@ -47,7 +47,7 @@ export default memo(({ type }) => {
       break;
   }
 
-  const position = getPosition();
+  const position = getPosition(440 / 2);
 
   stylePos = {
     position: "absolute",
