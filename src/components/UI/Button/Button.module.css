@@ -21,6 +21,7 @@
 .Button:not(:disabled):hover {
   opacity: 0.8;
 }
+
 .green {
   background-color: #2c4f21ea;
   color: white;

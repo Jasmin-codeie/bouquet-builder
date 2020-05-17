@@ -8,7 +8,6 @@
   top: 100px;
   background-color: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.137);
-
   transition: all 0.5s ease-out;
   opacity: 0;
   transform: translateY(-100vh);

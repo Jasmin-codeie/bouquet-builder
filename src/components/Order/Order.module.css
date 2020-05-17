@@ -12,6 +12,7 @@
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
+
 .Order .price {
   font-weight: bold;
   font-size: 1.5rem;
@@ -19,6 +20,7 @@
   font-family: "Nanum Brush Script", cursive;
   margin-bottom: 0.3em;
 }
+
 .Order .flower {
   border-radius: 0.3em;
   padding: 0.3em;

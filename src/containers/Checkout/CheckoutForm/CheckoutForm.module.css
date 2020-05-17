@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: column nowrap;
 }
+
 .CheckoutForm input,
 .CheckoutForm select {
   padding: 0.5em 1em;
@@ -11,11 +12,13 @@
   min-width: 480px;
   margin-top: 0.5em;
 }
+
 .CheckoutForm input:focus,
 .CheckoutForm select:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.6) inset;
 }
+
 .CheckoutForm button {
   margin: 1em 0;
 }
