@@ -18,7 +18,8 @@
 }
 
 .NavItem .active {
-  background-color: #f8e2d97c;
+  background-color: #f8e2d94d;
+  border-bottom-color: rgba(0, 0, 0, 0.835);
 }
 
 @media (max-width: 650px) {
@@ -29,5 +30,11 @@
     border-bottom: 0px solid transparent;
     border-right-color: black;
     background-color: white;
+  }
+
+  .NavItem .active {
+    border-bottom: 0px solid transparent;
+    background-color: #f8e2d94d;
+    border-right: 5px solid rgba(0, 0, 0, 0.835);
   }
 }
