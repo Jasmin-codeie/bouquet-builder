@@ -11,7 +11,7 @@ const CONTROLS = {
 };
 export default ({ price, flowers, details }) => {
   const flowersOutput = Object.keys(flowers).map((key) => (
-    <span className={classes.flower}>
+    <span key={key} className={classes.flower}>
       {CONTROLS[key]}({flowers[key]})
     </span>
   ));
