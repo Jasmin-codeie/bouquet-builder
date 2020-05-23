@@ -12,6 +12,15 @@ const initialState = {
   price: 80,
 };
 
+const PRICES = {
+  roses: 7,
+  jasmine: 10,
+  daisies: 8,
+  lilies: 11,
+  irises: 15,
+  liliesOfTheValley: 12,
+};
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case actions.ADD_FLOWERS:
@@ -21,6 +30,7 @@ export default (state = initialState, action) => {
           ...state.flowers,
           [action.flower]: state.flowers[action.flower] + 1,
         },
+        price: state.price + PRICES[action.flower],
       };
 
     case actions.REMOVE_FLOWERS:
@@ -30,6 +40,8 @@ export default (state = initialState, action) => {
           ...state.flowers,
           [action.flower]: state.flowers[action.flower] - 1,
         },
+
+        price: state.price - PRICES[action.flower],
       };
 
     default:

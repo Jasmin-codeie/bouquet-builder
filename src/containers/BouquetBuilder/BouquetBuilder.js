@@ -10,19 +10,8 @@ import withErrorHandler from "../../hoc/withErrorHadler/withErrorHadler";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const PRICES = {
-  roses: 7,
-  jasmine: 10,
-  daisies: 8,
-  lilies: 11,
-  irises: 15,
-  liliesOfTheValley: 12,
-};
-
 export default withErrorHandler(() => {
-  const { flowers } = useSelector((state) => state);
-
-  const [price, setPrice] = useState(80);
+  const { flowers, price } = useSelector((state) => state);
   const [canOrder, setCanOrder] = useState(false);
   const [isOrdering, setIsOrdering] = useState(false);
   const history = useHistory();
@@ -61,8 +50,8 @@ export default withErrorHandler(() => {
     //setFlowers(newFlowers);
     checkCanOrder(newFlowers);
 
-    const newPrice = price + PRICES[type];
-    setPrice(newPrice);
+    //const newPrice = price + PRICES[type];
+    //setPrice(newPrice);
   }
 
   function removeFlowers(type) {
@@ -72,8 +61,8 @@ export default withErrorHandler(() => {
       //setFlowers(newFlowers);
       checkCanOrder(newFlowers);
 
-      const newPrice = price - PRICES[type];
-      setPrice(newPrice);
+      //const newPrice = price - PRICES[type];
+      //setPrice(newPrice);
     }
   }
   /*
