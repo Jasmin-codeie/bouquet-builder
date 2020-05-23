@@ -27,6 +27,7 @@ export default withErrorHandler(() => {
       .catch((error) => {});
   }, []);
 */
+
   let output = <Spinner />;
   if (flowers) {
     output = (
