@@ -9,7 +9,7 @@ export default ({ control, removeFlowers, addFlowers, disabled }) => {
     <div className={classes.BouquetControl}>
       <button
         className={classes.less}
-        onClick={() => dispatch({ type: REMOVE_FLOWERS })}
+        onClick={() => dispatch({ type: REMOVE_FLOWERS, flower: control.type })}
         disabled={disabled}
       >
         -
@@ -17,7 +17,7 @@ export default ({ control, removeFlowers, addFlowers, disabled }) => {
       <span className={classes.label}>{control.label}</span>
       <button
         className={classes.more}
-        onClick={() => dispatch({ type: ADD_FLOWERS })}
+        onClick={() => dispatch({ type: ADD_FLOWERS, flower: control.type })}
       >
         +
       </button>

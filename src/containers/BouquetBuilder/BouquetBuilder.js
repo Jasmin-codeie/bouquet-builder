@@ -8,6 +8,7 @@ import axios from "../../axios";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from "../../hoc/withErrorHadler/withErrorHadler";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const PRICES = {
   roses: 7,
@@ -19,7 +20,8 @@ const PRICES = {
 };
 
 export default withErrorHandler(() => {
-  const [flowers, setFlowers] = useState(null);
+  const { flowers } = useSelector((state) => state);
+
   const [price, setPrice] = useState(80);
   const [canOrder, setCanOrder] = useState(false);
   const [isOrdering, setIsOrdering] = useState(false);
@@ -56,7 +58,7 @@ export default withErrorHandler(() => {
   function addFlowers(type) {
     const newFlowers = { ...flowers };
     newFlowers[type]++;
-    setFlowers(newFlowers);
+    //setFlowers(newFlowers);
     checkCanOrder(newFlowers);
 
     const newPrice = price + PRICES[type];
@@ -67,21 +69,21 @@ export default withErrorHandler(() => {
     if (flowers[type] >= 1) {
       const newFlowers = { ...flowers };
       newFlowers[type]--;
-      setFlowers(newFlowers);
+      //setFlowers(newFlowers);
       checkCanOrder(newFlowers);
 
       const newPrice = price - PRICES[type];
       setPrice(newPrice);
     }
   }
-
+  /*
   useEffect(() => {
     axios
       .get("/flowers.json")
       .then((response) => setFlowers(response.data))
       .catch((error) => {});
   }, []);
-
+*/
   let output = <Spinner />;
   if (flowers) {
     output = (
