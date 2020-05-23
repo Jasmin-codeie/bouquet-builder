@@ -6,26 +6,12 @@ import classes from "./Checkout.module.css";
 import CheckoutForm from "./CheckoutForm/CheckoutForm";
 import withErrorHandler from "../../hoc/withErrorHadler/withErrorHadler";
 import Spinner from "../../components/UI/Spinner/Spinner";
+import { useSelector } from "react-redux";
 
 export default withErrorHandler(() => {
   const history = useHistory();
-  const location = useLocation();
-  const [flowers, setFlowers] = useState({});
-  const [price, setPrice] = useState(0);
+  const { flowers, price } = useSelector((state) => state);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const query = new URLSearchParams(location.search);
-    const newFlowers = {};
-    query.forEach((value, key) => {
-      if (key === "price") {
-        setPrice(+value);
-      } else {
-        newFlowers[key] = +value;
-      }
-    });
-    setFlowers(newFlowers);
-  }, []);
 
   function checkoutCancel() {
     history.push("/builder");
