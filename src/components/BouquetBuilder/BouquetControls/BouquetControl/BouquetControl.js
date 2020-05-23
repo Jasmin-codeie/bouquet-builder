@@ -3,7 +3,7 @@ import classes from "./BouquetControl.module.css";
 import { useDispatch } from "react-redux";
 import { ADD_FLOWERS, REMOVE_FLOWERS } from "../../../../store/actions";
 
-export default ({ control, removeFlowers, addFlowers, disabled }) => {
+export default ({ control, disabled }) => {
   const dispatch = useDispatch();
   return (
     <div className={classes.BouquetControl}>

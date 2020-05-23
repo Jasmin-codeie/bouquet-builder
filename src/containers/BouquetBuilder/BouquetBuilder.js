@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Bouquet from "../../components/BouquetBuilder/Bouquet/Bouquet";
 import classes from "./BouquetBuilder.module.css";
 import BouquetControls from "../../components/BouquetBuilder/BouquetControls/BouquetControls";
@@ -12,24 +12,13 @@ import { useSelector } from "react-redux";
 
 export default withErrorHandler(() => {
   const { flowers, price } = useSelector((state) => state);
-  const [canOrder, setCanOrder] = useState(false);
+
   const [isOrdering, setIsOrdering] = useState(false);
   const history = useHistory();
 
-  function checkCanOrder(flowers) {
-    const total = Object.keys(flowers).reduce((total, flower) => {
-      return total + flowers[flower];
-    }, 0);
-    setCanOrder(total > 0);
-  }
-
-  function startOrder() {
-    setIsOrdering(true);
-  }
-
-  function cancelOrder() {
-    setIsOrdering(false);
-  }
+  const canOrder = Object.values(flowers).reduce((canOrder, number) => {
+    return !canOrder ? number > 0 : canOrder;
+  }, false);
 
   function finishOrder() {
     const queryParams = Object.keys(flowers).map(
@@ -44,27 +33,6 @@ export default withErrorHandler(() => {
     });
   }
 
-  function addFlowers(type) {
-    const newFlowers = { ...flowers };
-    newFlowers[type]++;
-    //setFlowers(newFlowers);
-    checkCanOrder(newFlowers);
-
-    //const newPrice = price + PRICES[type];
-    //setPrice(newPrice);
-  }
-
-  function removeFlowers(type) {
-    if (flowers[type] >= 1) {
-      const newFlowers = { ...flowers };
-      newFlowers[type]--;
-      //setFlowers(newFlowers);
-      checkCanOrder(newFlowers);
-
-      //const newPrice = price - PRICES[type];
-      //setPrice(newPrice);
-    }
-  }
   /*
   useEffect(() => {
     axios
@@ -79,11 +47,9 @@ export default withErrorHandler(() => {
       <>
         <Bouquet price={price} flowers={flowers} />
         <BouquetControls
-          startOrder={startOrder}
+          startOrder={() => setIsOrdering(true)}
           canOrder={canOrder}
           flowers={flowers}
-          addFlowers={addFlowers}
-          removeFlowers={removeFlowers}
         />
       </>
     );
@@ -92,7 +58,7 @@ export default withErrorHandler(() => {
   if (isOrdering) {
     orderSummary = (
       <OrderSummary
-        cancelOrder={cancelOrder}
+        cancelOrder={() => setIsOrdering(false)}
         finishOrder={finishOrder}
         flowers={flowers}
         price={price}
@@ -103,7 +69,7 @@ export default withErrorHandler(() => {
   return (
     <div className={classes.BouquetBuilder}>
       {output}
-      <Modal show={isOrdering} hideCallBack={cancelOrder}>
+      <Modal show={isOrdering} hideCallBack={() => setIsOrdering(false)}>
         {orderSummary}
       </Modal>
     </div>

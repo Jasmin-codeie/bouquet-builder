@@ -12,19 +12,11 @@ const CONTROLS = [
   { label: "Lilies Of The Valley", type: "liliesOfTheValley" },
 ];
 
-export default ({
-  canOrder,
-  flowers,
-  addFlowers,
-  removeFlowers,
-  startOrder,
-}) => {
+export default ({ canOrder, flowers, startOrder }) => {
   const controlsOutput = CONTROLS.map((control) => (
     <BouquetControl
       key={control.type}
       control={control}
-      addFlowers={addFlowers}
-      removeFlowers={removeFlowers}
       disabled={flowers[control.type] === 0}
     />
   ));
