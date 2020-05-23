@@ -1,18 +1,26 @@
 import React from "react";
 import classes from "./BouquetControl.module.css";
+import { useDispatch } from "react-redux";
+import { ADD_FLOWERS, REMOVE_FLOWERS } from "../../../../store/actions";
 
-export default ({ control, removeFlowers, addFlowers, disabled }) => (
-  <div className={classes.BouquetControl}>
-    <button
-      className={classes.less}
-      onClick={() => removeFlowers(control.type)}
-      disabled={disabled}
-    >
-      -
-    </button>
-    <span className={classes.label}>{control.label}</span>
-    <button className={classes.more} onClick={() => addFlowers(control.type)}>
-      +
-    </button>
-  </div>
-);
+export default ({ control, removeFlowers, addFlowers, disabled }) => {
+  const dispatch = useDispatch();
+  return (
+    <div className={classes.BouquetControl}>
+      <button
+        className={classes.less}
+        onClick={() => dispatch({ type: REMOVE_FLOWERS })}
+        disabled={disabled}
+      >
+        -
+      </button>
+      <span className={classes.label}>{control.label}</span>
+      <button
+        className={classes.more}
+        onClick={() => dispatch({ type: ADD_FLOWERS })}
+      >
+        +
+      </button>
+    </div>
+  );
+};
