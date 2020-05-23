@@ -15,11 +15,24 @@ export default ({ price, flowers, details }) => {
       {CONTROLS[key]}({flowers[key]})
     </span>
   ));
+
+  const detailsOutput = (
+    <div className={classes.details}>
+      {details
+        ? details.name +
+          "," +
+          details.phone +
+          "," +
+          details.city +
+          "," +
+          details.address
+        : "No details available!"}
+    </div>
+  );
+
   return (
     <div className={classes.Order}>
-      <div className={classes.details}>
-        {details.name}, {details.phone}, {details.city}, {details.address}
-      </div>
+      {detailsOutput}
       <div className={classes.price}>{price} som</div>
       <div className={classes.flowers}>{flowersOutput}</div>
     </div>
