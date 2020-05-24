@@ -3,7 +3,7 @@ import Button from "../../../components/UI/Button/Button";
 import classes from "./CheckoutForm.module.css";
 
 export default ({ checkoutFinish }) => {
-  function formSubmit({ event }) {
+  function formSubmit(event) {
     const data = new FormData(event.target);
     checkoutFinish({
       name: data.get("name"),
