@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./BouquetControl.module.css";
 import { useDispatch } from "react-redux";
-import { ADD_FLOWERS, REMOVE_FLOWERS } from "../../../../store/actions";
+import { ADD_FLOWERS, REMOVE_FLOWERS } from "../../../../store/actions/types";
 
 export default ({ control, disabled }) => {
   const dispatch = useDispatch();
