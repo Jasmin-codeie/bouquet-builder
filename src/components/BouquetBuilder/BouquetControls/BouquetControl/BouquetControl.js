@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./BouquetControl.module.css";
 import { useDispatch } from "react-redux";
-import { ADD_FLOWERS, REMOVE_FLOWERS } from "../../../../store/actions/types";
 
 export default ({ control, disabled }) => {
   const dispatch = useDispatch();
@@ -9,7 +8,7 @@ export default ({ control, disabled }) => {
     <div className={classes.BouquetControl}>
       <button
         className={classes.less}
-        onClick={() => dispatch({ type: REMOVE_FLOWERS, flower: control.type })}
+        onClick={() => remove(dispatch, control.type)}
         disabled={disabled}
       >
         -
@@ -17,7 +16,7 @@ export default ({ control, disabled }) => {
       <span className={classes.label}>{control.label}</span>
       <button
         className={classes.more}
-        onClick={() => dispatch({ type: ADD_FLOWERS, flower: control.type })}
+        onClick={() => add(dispatch, control.type)}
       >
         +
       </button>
