@@ -2,23 +2,18 @@ import * as types from "../actions/types";
 
 const initialState = {
   flowers: {
-    roses: 0,
-    jasmine: 0,
-    daisies: 0,
-    lilies: 0,
-    irises: 0,
-    liliesOfTheValley: 0,
+    roses: { quantity: 0, price: 7, label: "Roses" },
+    jasmine: { quantity: 0, price: 10, label: "Jasmine" },
+    daisies: { quantity: 0, price: 8, label: "Daisies" },
+    lilies: { quantity: 0, price: 11, label: "Lilies" },
+    irises: { quantity: 0, price: 15, label: "Irises" },
+    liliesOfTheValley: {
+      quantity: 0,
+      price: 12,
+      label: "Lilies of the Valley",
+    },
   },
   price: 80,
-};
-
-const PRICES = {
-  roses: 7,
-  jasmine: 10,
-  daisies: 8,
-  lilies: 11,
-  irises: 15,
-  liliesOfTheValley: 12,
 };
 
 export default (state = initialState, action) => {
@@ -28,9 +23,12 @@ export default (state = initialState, action) => {
         ...state,
         flowers: {
           ...state.flowers,
-          [action.flower]: state.flowers[action.flower] + 1,
+          [action.flower]: {
+            ...state.flowers[action.flower],
+            quantity: state.flowers[action.flower].quantity + 1,
+          },
         },
-        price: state.price + PRICES[action.flower],
+        price: state.price + state.flowers[action.flower].price,
       };
 
     case types.REMOVE_FLOWERS:
@@ -38,10 +36,13 @@ export default (state = initialState, action) => {
         ...state,
         flowers: {
           ...state.flowers,
-          [action.flower]: state.flowers[action.flower] - 1,
+          [action.flower]: {
+            ...state.flowers[action.flower],
+            quantity: state.flowers[action.flower].quantity - 1,
+          },
         },
 
-        price: state.price - PRICES[action.flower],
+        price: state.price - state.flowers[action.flower].price,
       };
 
     default:

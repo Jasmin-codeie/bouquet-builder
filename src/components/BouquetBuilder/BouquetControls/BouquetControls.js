@@ -3,21 +3,13 @@ import classes from "./BouquetControls.module.css";
 import BouquetControl from "./BouquetControl/BouquetControl";
 import Button from "../../UI/Button/Button";
 
-const CONTROLS = [
-  { label: "Roses", type: "roses" },
-  { label: "Jasmine", type: "jasmine" },
-  { label: "Daisies", type: "daisies" },
-  { label: "Lilies", type: "lilies" },
-  { label: "Irises", type: "irises" },
-  { label: "Lilies Of The Valley", type: "liliesOfTheValley" },
-];
-
 export default ({ canOrder, flowers, startOrder }) => {
-  const controlsOutput = CONTROLS.map((control) => (
+  const controlsOutput = Object.keys(flowers).map((flower) => (
     <BouquetControl
-      key={control.type}
-      control={control}
-      disabled={flowers[control.type] === 0}
+      key={flower}
+      flower={flower}
+      label={flowers[flower].label}
+      disabled={flowers[flower].quantity === 0}
     />
   ));
 

@@ -15,8 +15,8 @@ export default withErrorHandler(() => {
   const history = useHistory();
   const [isOrdering, setIsOrdering] = useState(false);
 
-  const canOrder = Object.values(flowers).reduce((canOrder, number) => {
-    return !canOrder ? number > 0 : canOrder;
+  const canOrder = Object.values(flowers).reduce((canOrder, flower) => {
+    return !canOrder ? flower.quantity > 0 : canOrder;
   }, false);
 
   /*

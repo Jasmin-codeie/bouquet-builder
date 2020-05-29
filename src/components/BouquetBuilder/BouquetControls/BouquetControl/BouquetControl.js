@@ -1,23 +1,21 @@
 import React from "react";
 import classes from "./BouquetControl.module.css";
 import { useDispatch } from "react-redux";
+import { remove, add } from "../../../../store/actions/builder";
 
-export default ({ control, disabled }) => {
+export default ({ label, flower, disabled }) => {
   const dispatch = useDispatch();
   return (
     <div className={classes.BouquetControl}>
       <button
         className={classes.less}
-        onClick={() => remove(dispatch, control.type)}
+        onClick={() => remove(dispatch, flower)}
         disabled={disabled}
       >
         -
       </button>
-      <span className={classes.label}>{control.label}</span>
-      <button
-        className={classes.more}
-        onClick={() => add(dispatch, control.type)}
-      >
+      <span className={classes.label}>{label}</span>
+      <button className={classes.more} onClick={() => add(dispatch, flower)}>
         +
       </button>
     </div>
