@@ -10,11 +10,13 @@ const CONTROLS = {
   liliesOfTheValley: "Lilies Of The Valley",
 };
 export default ({ price, flowers, details }) => {
-  const flowersOutput = Object.keys(flowers).map((flower) => (
-    <span key={flower} className={classes.flower}>
-      {flowers[flower].label}({flowers[flower].quantity})
-    </span>
-  ));
+  const flowersOutput = Object.keys(flowers)
+    .filter((flower) => flowers[flower].quantity > 0)
+    .map((flower) => (
+      <span key={flower} className={classes.flower}>
+        {flowers[flower].label}({flowers[flower].quantity})
+      </span>
+    ));
 
   const detailsOutput = (
     <div className={classes.details}>
