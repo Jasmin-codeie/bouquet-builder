@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
-import reducer from "./store/reducers/builder";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
+import reducer from "./store/reducers";
 
 const store = createStore(reducer);
 
