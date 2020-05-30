@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Bouquet from "../../components/BouquetBuilder/Bouquet/Bouquet";
 import classes from "./BouquetBuilder.module.css";
 import BouquetControls from "../../components/BouquetBuilder/BouquetControls/BouquetControls";
@@ -8,28 +8,25 @@ import axios from "../../axios";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from "../../hoc/withErrorHadler/withErrorHadler";
 import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { load } from "../../store/actions/builder";
 
 export default withErrorHandler(() => {
   const { flowers, price } = useSelector((state) => state);
   const history = useHistory();
   const [isOrdering, setIsOrdering] = useState(false);
+  const dispatch = useDispatch();
 
-  const canOrder = Object.values(flowers).reduce((canOrder, flower) => {
-    return !canOrder ? flower.quantity > 0 : canOrder;
-  }, false);
-
-  /*
   useEffect(() => {
-    axios
-      .get("/flowers.json")
-      .then((response) => setFlowers(response.data))
-      .catch((error) => {});
-  }, []);
-*/
+    load(dispatch);
+  }, [dispatch]);
 
   let output = <Spinner />;
   if (flowers) {
+    const canOrder = Object.values(flowers).reduce((canOrder, flower) => {
+      return !canOrder ? flower.quantity > 0 : canOrder;
+    }, false);
+
     output = (
       <>
         <Bouquet price={price} flowers={flowers} />
@@ -38,27 +35,16 @@ export default withErrorHandler(() => {
           canOrder={canOrder}
           flowers={flowers}
         />
+        <Modal show={isOrdering} hideCallback={() => setIsOrdering(false)}>
+          <OrderSummary
+            flowers={flowers}
+            finishOrder={() => history.push("/checkout")}
+            cancelOrder={() => setIsOrdering(false)}
+            price={price}
+          />
+        </Modal>
       </>
     );
   }
-  let orderSummary = <Spinner />;
-  if (isOrdering) {
-    orderSummary = (
-      <OrderSummary
-        cancelOrder={() => setIsOrdering(false)}
-        finishOrder={() => history.push("/checkout")}
-        flowers={flowers}
-        price={price}
-      />
-    );
-  }
-
-  return (
-    <div className={classes.BouquetBuilder}>
-      {output}
-      <Modal show={isOrdering} hideCallBack={() => setIsOrdering(false)}>
-        {orderSummary}
-      </Modal>
-    </div>
-  );
+  return <div className={classes.BouquetBuilder}>{output}</div>;
 }, axios);
