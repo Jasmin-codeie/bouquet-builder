@@ -6,12 +6,12 @@ import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/BouquetBuilder/OrderSummary/OrderSummary";
 import axios from "../../axios";
 import Spinner from "../../components/UI/Spinner/Spinner";
-import withErrorHandler from "../../hoc/withErrorHadler/withErrorHadler";
+import withAxios from "../../hoc/withAxios/withAxios";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { load } from "../../store/actions/builder";
 
-export default withErrorHandler(() => {
+export default withAxios(() => {
   const { flowers, price } = useSelector((state) => state.builder);
   const history = useHistory();
   const [isOrdering, setIsOrdering] = useState(false);
