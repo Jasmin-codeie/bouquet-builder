@@ -10,9 +10,9 @@ const CONTROLS = {
   liliesOfTheValley: "Lilies Of The Valley",
 };
 export default ({ price, flowers, details }) => {
-  const flowersOutput = Object.keys(flowers).map((key) => (
-    <span key={key} className={classes.flower}>
-      {CONTROLS[key]}({flowers[key]})
+  const flowersOutput = Object.keys(flowers).map((flower) => (
+    <span key={flower} className={classes.flower}>
+      {flowers[flower].label}({flowers[flower].quantity})
     </span>
   ));
 
@@ -20,11 +20,11 @@ export default ({ price, flowers, details }) => {
     <div className={classes.details}>
       {details
         ? details.name +
-          "," +
+          ", " +
           details.phone +
-          "," +
+          ", " +
           details.city +
-          "," +
+          ", " +
           details.address
         : "No details available!"}
     </div>
