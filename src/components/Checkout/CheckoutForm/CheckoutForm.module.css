@@ -22,3 +22,22 @@
 .CheckoutForm button {
   margin: 1em 0;
 }
+
+@media (max-width: 650px) {
+  .CheckoutForm {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 1rem;
+  }
+
+  .CheckoutForm input,
+  .CheckoutForm select {
+    padding: 0.5em 1em;
+    border: 0;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3) inset;
+    font-size: 1.2rem;
+    min-width: 100px;
+    max-width: 250px;
+    margin-top: 0.5em;
+  }
+}
