@@ -9,5 +9,6 @@
 
 .Orders h3 {
   margin: 0 auto;
-  font-family: sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
 }

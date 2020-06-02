@@ -22,7 +22,7 @@ export default withAxios(() => {
     ));
   }
   if (orders === null) {
-    ordersOutput = <h3>No orders found...</h3>;
+    ordersOutput = <h3>No orders found</h3>;
   }
 
   return (
