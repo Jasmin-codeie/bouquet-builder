@@ -6,41 +6,28 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
+  const newState = { ...state };
+
   switch (action.type) {
     case types.ADD_FLOWERS:
-      return {
-        ...state,
-        flowers: {
-          ...state.flowers,
-          [action.flower]: {
-            ...state.flowers[action.flower],
-            quantity: state.flowers[action.flower].quantity + 1,
-          },
-        },
-        price: state.price + state.flowers[action.flower].price,
-      };
+      newState.flowers[action.flower].quantity++;
+      newState.price = state.price + state.flowers[action.flower].price;
+
+      return newState;
 
     case types.REMOVE_FLOWERS:
-      return {
-        ...state,
-        flowers: {
-          ...state.flowers,
-          [action.flower]: {
-            ...state.flowers[action.flower],
-            quantity: state.flowers[action.flower].quantity - 1,
-          },
-        },
-        price: state.price - state.flowers[action.flower].price,
-      };
+      newState.flowers[action.flower].quantity--;
+      newState.price = state.price - state.flowers[action.flower].price;
+
+      return newState;
 
     case types.SET_FLOWERS:
-      return {
-        ...state,
-        flowers: action.flowers,
-        price: initialState.price,
-      };
+      newState.flowers = action.flowers;
+      newState.price = initialState.price;
+
+      return newState;
 
     default:
-      return state;
+      return newState;
   }
 };
