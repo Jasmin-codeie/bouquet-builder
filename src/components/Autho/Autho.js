@@ -4,10 +4,12 @@ import axios from "axios";
 import classes from "./Autho.module.css";
 import Button from "../UI/Button/Button";
 import { start, autho } from "../../store/actions/autho";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import Spinner from "../UI/Spinner/Spinner";
 
 export default withAxios(() => {
   const dispatch = useDispatch();
+  const { loading } = useSelector((state) => state.autho);
 
   const formSubmitted = (event) => {
     start(dispatch);
@@ -18,10 +20,11 @@ export default withAxios(() => {
     event.preventDefault();
   };
 
-  return (
-    <div className={classes.Autho}>
+  let formOutput = <Spinner />;
+  if (!loading) {
+    formOutput = (
       <form onSubmit={formSubmitted}>
-        <h1>Sign up</h1>
+        <h1>Welcome!</h1>
         <input type="email" placeholder="Email" name="email" required />
         <input
           type="password"
@@ -32,6 +35,8 @@ export default withAxios(() => {
         />
         <Button green>Submit</Button>
       </form>
-    </div>
-  );
+    );
+  }
+
+  return <div className={classes.Autho}>{formOutput}</div>;
 }, axios);
