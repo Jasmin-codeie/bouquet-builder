@@ -14,10 +14,10 @@ export const success = (dispatch, { idToken, localId }) =>
     token: localId,
   });
 
-export const fail = (dispatch, errors) =>
+export const fail = (dispatch, error) =>
   dispatch({
     type: AUTH_FAIL,
-    errors,
+    error,
   });
 
 export const autho = (dispatch, email, password) =>

@@ -9,7 +9,7 @@ import Spinner from "../UI/Spinner/Spinner";
 
 export default withAxios(() => {
   const dispatch = useDispatch();
-  const { loading } = useSelector((state) => state.autho);
+  const { loading, error } = useSelector((state) => state.autho);
 
   const formSubmitted = (event) => {
     start(dispatch);
@@ -38,5 +38,15 @@ export default withAxios(() => {
     );
   }
 
-  return <div className={classes.Autho}>{formOutput}</div>;
+  let errorOutput = null;
+  if (error) {
+    errorOutput = <h4 className={classes.error}>{error.message}</h4>;
+  }
+
+  return (
+    <div className={classes.Autho}>
+      {errorOutput}
+      {formOutput}
+    </div>
+  );
 }, axios);
