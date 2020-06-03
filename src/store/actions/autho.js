@@ -21,6 +21,9 @@ export const fail = (dispatch, errors) =>
 
 export const autho = (dispatch, email, password) =>
   axios
-    .post()
+    .post(
+      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDkDT_-Dt86HpTEcN9TAZUNTyNVQVrKr5g",
+      { email, password }
+    )
     .then(({ data }) => success(dispatch, data))
     .catch((error) => fail(dispatch, error));
