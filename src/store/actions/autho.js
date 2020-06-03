@@ -19,7 +19,7 @@ export const fail = (dispatch, errors) =>
     errors,
   });
 
-export const auth = (dispatch, email, password) =>
+export const autho = (dispatch, email, password) =>
   axios
     .post()
     .then(({ data }) => success(dispatch, data))
