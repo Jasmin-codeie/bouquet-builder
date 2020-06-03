@@ -1,10 +1,11 @@
 import React from "react";
-import "./App.css";
-import BouquetBuilder from "./containers/BouquetBuilder/BouquetBuilder";
-import Layout from "./containers/Layout/Layout";
-import Checkout from "./components/Checkout/Checkout";
 import { Route, Switch, Redirect } from "react-router-dom";
+import Layout from "./containers/Layout/Layout";
+import BouquetBuilder from "./containers/BouquetBuilder/BouquetBuilder";
+import Checkout from "./components/Checkout/Checkout";
 import Orders from "./components/Order/Orders";
+import Autho from "./components/Autho/Autho";
+import "./App.css";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/orders">
             <Orders />
+          </Route>
+          <Route path="/autho">
+            <Autho />
           </Route>
         </Switch>
       </Layout>

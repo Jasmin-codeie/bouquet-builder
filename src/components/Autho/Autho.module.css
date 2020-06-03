@@ -1,0 +1,51 @@
+.Autho {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Autho form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.Autho input {
+  padding: 0.5em 1em;
+  border: 0;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3) inset;
+  font-size: 1.2rem;
+  min-width: 380px;
+  width: 400px;
+
+  margin-top: 0.5em;
+}
+
+.Autho input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6) inset;
+}
+
+.Autho button {
+  min-width: 100px;
+  width: 350px;
+  height: 40px;
+}
+
+@media (max-width: 650px) {
+  .Autho {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 1rem;
+  }
+
+  .Autho input,
+  .Autho select {
+    padding: 0.5em 1em;
+    border: 0;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3) inset;
+    font-size: 1.2rem;
+    min-width: 100px;
+    max-width: 250px;
+    margin-top: 0.5em;
+  }
+}
