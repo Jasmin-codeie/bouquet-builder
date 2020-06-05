@@ -38,8 +38,8 @@ export default memo(({ type }) => {
     case "lilies":
       flowersClasses.push(classes.lilies);
       break;
-    case "irises":
-      flowersClasses.push(classes.irises);
+    case "orchids":
+      flowersClasses.push(classes.orchids);
       break;
     case "liliesOfTheValley":
     default:
