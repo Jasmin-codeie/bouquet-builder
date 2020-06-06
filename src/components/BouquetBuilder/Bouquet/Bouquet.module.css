@@ -38,7 +38,7 @@
   margin-left: 65px;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .Bouquet .bento {
     background-size: contain;
     background-repeat: no-repeat;

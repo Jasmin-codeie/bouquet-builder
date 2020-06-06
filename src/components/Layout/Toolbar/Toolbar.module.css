@@ -13,7 +13,7 @@
   display: none;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 700px) {
   .Toolbar nav {
     display: block;
   }

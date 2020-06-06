@@ -23,7 +23,7 @@
   padding: 2px;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .Footer ul {
     font-size: 0.8rem;
   }
