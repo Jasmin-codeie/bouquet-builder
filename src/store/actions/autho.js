@@ -1,22 +1,22 @@
-import { AUTH_FAIL, AUTH_SUCCESS, AUTH_START } from "./types";
+import { AUTHO_FAIL, AUTHO_SUCCESS, AUTHO_START } from "./types";
 import axios from "axios";
 
 export const start = (dispatch, data) =>
   dispatch({
-    type: AUTH_START,
+    type: AUTHO_START,
     data,
   });
 
 export const success = (dispatch, { idToken, localId }) =>
   dispatch({
-    type: AUTH_SUCCESS,
+    type: AUTHO_SUCCESS,
     id: idToken,
     token: localId,
   });
 
 export const fail = (dispatch, error) =>
   dispatch({
-    type: AUTH_FAIL,
+    type: AUTHO_FAIL,
     error,
   });
 

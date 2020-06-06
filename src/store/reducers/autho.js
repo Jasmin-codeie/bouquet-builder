@@ -10,21 +10,21 @@ const initialState = {
 export default (state = initialState, action) => {
   const newState = { ...state };
   switch (action.type) {
-    case types.AUTH_START:
+    case types.AUTHO_START:
       newState.token = null;
       newState.id = null;
       newState.errors = null;
       newState.loading = true;
       return newState;
 
-    case types.AUTH_SUCCESS:
+    case types.AUTHO_SUCCESS:
       newState.token = action.token;
       newState.id = action.id;
       newState.errors = null;
       newState.loading = false;
       return newState;
 
-    case types.AUTH_FAIL:
+    case types.AUTHO_FAIL:
       newState.errors = action.errors;
       newState.loading = false;
       return newState;
