@@ -27,8 +27,10 @@
 
 .Autho button {
   min-width: 100px;
-  width: 350px;
+  width: 250px;
   height: 40px;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 .Autho .error {
