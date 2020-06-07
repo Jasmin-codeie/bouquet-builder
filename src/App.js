@@ -6,6 +6,7 @@ import Checkout from "./components/Checkout/Checkout";
 import Orders from "./components/Order/Orders";
 import Auth from "./components/Auth/Auth";
 import "./App.css";
+import Logout from "./components/Logout/Logout";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/auth">
             <Auth />
+          </Route>
+          <Route path="/logout">
+            <Logout />
           </Route>
         </Switch>
       </Layout>
