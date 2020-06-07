@@ -13,6 +13,7 @@ import { load } from "../../store/actions/builder";
 
 export default withAxios(() => {
   const { flowers, price } = useSelector((state) => state.builder);
+  const isAuthenticated = useSelector((state) => state.auth.token !== null);
   const history = useHistory();
   const [isOrdering, setIsOrdering] = useState(false);
   const dispatch = useDispatch();
@@ -20,6 +21,14 @@ export default withAxios(() => {
   useEffect(() => {
     load(dispatch);
   }, [dispatch]);
+
+  function startOrder() {
+    if (isAuthenticated) {
+      setIsOrdering(true);
+    } else {
+      history.push("/auth?checkout");
+    }
+  }
 
   let output = <Spinner />;
   if (flowers) {
@@ -31,7 +40,7 @@ export default withAxios(() => {
       <>
         <Bouquet price={price} flowers={flowers} />
         <BouquetControls
-          startOrder={() => setIsOrdering(true)}
+          startOrder={startOrder}
           canOrder={canOrder}
           flowers={flowers}
         />
