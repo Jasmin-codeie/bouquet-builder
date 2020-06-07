@@ -23,7 +23,7 @@ export default withAxios(() => {
   if (!loading) {
     formOutput = (
       <form onSubmit={formSubmitted}>
-        <h1>Welcome</h1>
+        <h1>Welcome!</h1>
         <input type="email" placeholder="E-mail" name="email" required />
         <input
           type="password"

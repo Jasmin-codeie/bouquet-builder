@@ -28,6 +28,10 @@ const signUpUrl =
   "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + key;
 export const autho = (dispatch, method, email, password) =>
   axios
-    .post(method === "signin" ? signInUrl : signUpUrl, { email, password })
+    .post(method === "signin" ? signInUrl : signUpUrl, {
+      email,
+      password,
+      returnSecureToken: true,
+    })
     .then(({ data }) => success(dispatch, data))
     .catch((error) => fail(dispatch, error));

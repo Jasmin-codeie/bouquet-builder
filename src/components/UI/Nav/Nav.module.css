@@ -6,7 +6,7 @@
   flex-direction: column;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 740px) {
   .Nav {
     margin: 0 12px;
     flex-direction: row;
