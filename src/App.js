@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Layout from "./containers/Layout/Layout";
 import BouquetBuilder from "./containers/BouquetBuilder/BouquetBuilder";
@@ -7,8 +7,13 @@ import Orders from "./components/Order/Orders";
 import Auth from "./components/Auth/Auth";
 import "./App.css";
 import Logout from "./components/Logout/Logout";
+import { restore } from "./store/actions/auth";
+import { useDispatch } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => restore(dispatch));
+
   return (
     <div className="App">
       <Layout>
