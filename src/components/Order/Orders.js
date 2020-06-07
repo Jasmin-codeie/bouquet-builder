@@ -14,7 +14,7 @@ export default withAxios(() => {
 
   useEffect(() => {
     load(dispatch, token, id);
-  }, [dispatch, token]);
+  }, [dispatch, token, id]);
 
   let ordersOutput = <Spinner />;
   if (orders) {
