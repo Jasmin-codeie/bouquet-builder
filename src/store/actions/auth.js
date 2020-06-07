@@ -20,10 +20,15 @@ export const fail = (dispatch, error) =>
     error,
   });
 
-export const logout = (dispatch) =>
+export const logout = (dispatch) => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("id");
+  localStorage.removeItem("expirationDate");
+
   dispatch({
     type: AUTH_LOGOUT,
   });
+};
 
 export const restore = (dispatch) => {
   const idToken = localStorage.getItem("idToken");
@@ -37,7 +42,11 @@ export const restore = (dispatch) => {
         dispatch,
         (expirationDate.getTime() - new Date().getTime()) / 1000
       );
+    } else {
+      logout(dispatch);
     }
+  } else {
+    logout(dispatch);
   }
 };
 
@@ -59,13 +68,13 @@ export const auth = (dispatch, method, email, password) =>
     })
     .then(({ data }) => {
       const expirationDate = new Date(
-        new Date().getTime() + data.expirationDate * 1000
+        new Date().getTime() + data.expiresIn * 1000
       );
       localStorage.setItem("expirationDate", expirationDate);
       localStorage.setItem("idToken", data.idToken);
       localStorage.setItem("localId", data.localId);
 
       success(dispatch, data);
-      timeout(dispatch, +data.expirationDate);
+      timeout(dispatch, +data.expiresIn);
     })
     .catch((error) => fail(dispatch, error));
