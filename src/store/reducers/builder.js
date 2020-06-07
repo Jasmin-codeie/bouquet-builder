@@ -2,7 +2,7 @@ import * as types from "../actions/types";
 
 const initialState = {
   flowers: null,
-  price: 80,
+  price: 0,
 };
 
 export default (state = initialState, action) => {
