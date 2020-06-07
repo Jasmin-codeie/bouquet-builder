@@ -4,7 +4,7 @@ import Layout from "./containers/Layout/Layout";
 import BouquetBuilder from "./containers/BouquetBuilder/BouquetBuilder";
 import Checkout from "./components/Checkout/Checkout";
 import Orders from "./components/Order/Orders";
-import Autho from "./components/Autho/Autho";
+import Auth from "./components/Auth/Auth";
 import "./App.css";
 
 function App() {
@@ -24,8 +24,8 @@ function App() {
           <Route path="/orders">
             <Orders />
           </Route>
-          <Route path="/autho">
-            <Autho />
+          <Route path="/auth">
+            <Auth />
           </Route>
         </Switch>
       </Layout>

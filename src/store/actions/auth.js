@@ -1,28 +1,28 @@
-import { AUTHO_FAIL, AUTHO_SUCCESS, AUTHO_START, AUTHO_LOGOUT } from "./types";
+import { AUTH_FAIL, AUTH_SUCCESS, AUTH_START, AUTH_LOGOUT } from "./types";
 import axios from "axios";
 
 export const start = (dispatch, data) =>
   dispatch({
-    type: AUTHO_START,
+    type: AUTH_START,
     data,
   });
 
 export const success = (dispatch, { idToken, localId }) =>
   dispatch({
-    type: AUTHO_SUCCESS,
+    type: AUTH_SUCCESS,
     id: idToken,
     token: localId,
   });
 
 export const fail = (dispatch, error) =>
   dispatch({
-    type: AUTHO_FAIL,
+    type: AUTH_FAIL,
     error,
   });
 
 export const logout = (dispatch) =>
   dispatch({
-    type: AUTHO_LOGOUT,
+    type: AUTH_LOGOUT,
   });
 
 export const timeout = (dispatch, seconds) =>
@@ -34,7 +34,7 @@ const signInUrl =
   key;
 const signUpUrl =
   "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + key;
-export const autho = (dispatch, method, email, password) =>
+export const auth = (dispatch, method, email, password) =>
   axios
     .post(method === "signin" ? signInUrl : signUpUrl, {
       email,
