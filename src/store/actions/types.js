@@ -7,3 +7,4 @@ export const SET_ORDERS = "SET_ORDERS";
 export const AUTHO_START = "AUTHO_START";
 export const AUTHO_FAIL = "AUTHO_FAIL";
 export const AUTHO_SUCCESS = "AUTHO_SUCCESS";
+export const AUTHO_LOGOUT = "AUTHO_LOGOUT";

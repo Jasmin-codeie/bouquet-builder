@@ -1,4 +1,4 @@
-import { AUTHO_FAIL, AUTHO_SUCCESS, AUTHO_START } from "./types";
+import { AUTHO_FAIL, AUTHO_SUCCESS, AUTHO_START, AUTHO_LOGOUT } from "./types";
 import axios from "axios";
 
 export const start = (dispatch, data) =>
@@ -20,6 +20,14 @@ export const fail = (dispatch, error) =>
     error,
   });
 
+export const logout = (dispatch) =>
+  dispatch({
+    type: AUTHO_LOGOUT,
+  });
+
+export const timeout = (dispatch, seconds) =>
+  setTimeout(() => logout(dispatch), seconds * 1000);
+
 const key = "AIzaSyDkDT_-Dt86HpTEcN9TAZUNTyNVQVrKr5g";
 const signInUrl =
   "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" +
@@ -33,5 +41,8 @@ export const autho = (dispatch, method, email, password) =>
       password,
       returnSecureToken: true,
     })
-    .then(({ data }) => success(dispatch, data))
+    .then(({ data }) => {
+      success(dispatch, data);
+      timeout(dispatch, +data.expiresIn);
+    })
     .catch((error) => fail(dispatch, error));
